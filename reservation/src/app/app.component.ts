@@ -4,28 +4,38 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
+    <pre class="card card-block card-header">{{singleModel}}</pre>
+      <button type="button" class="btn btn-primary"
+              [(ngModel)]="singleModel" btnCheckbox
+              btnCheckboxTrue="1" btnCheckboxFalse="0">
+        Single Toggle
+      </button>
+      <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">이메일 주소</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="이메일을 입력하세요">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">암호</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="암호">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">파일 업로드</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">여기에 블록레벨 도움말 예제</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 입력을 기억합니다
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">제출</button>
+</form>
     
   `,
   styles: []
 })
 export class AppComponent {
   title = 'app';
+  singleModel: string = '1';
 }
